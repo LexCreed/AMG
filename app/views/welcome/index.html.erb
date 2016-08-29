@@ -1,0 +1,43 @@
+<div class="row jumbotron">
+  <div class="container">
+    <h1 class="text-center col-xs-12 T"> Welcome </h1>
+  </div>
+</div>
+
+
+
+<div cloass="jumbotron">
+
+    <div class=" text-center admin-alumno   btn-block" >
+<%if student_signed_in? %>
+
+        <div class="col-md-12 " >
+            <li >
+            <%= link_to "Editar", edit_student_registration_path, class:"" %> 
+            </li>
+            <li >
+            <%= link_to "Cerrar Sesion", destroy_student_session_path, method: :delete, class:" " %> 
+            </li>  
+         </div>
+
+
+<%else%>
+        
+        <div class="col-md-12   ">
+             <li id="piano" class="text-center">
+            <%= link_to "Alumno", new_student_session_path, class:"btn btn-primary btn-lg " %> 
+            </li>
+<br><br><br>
+
+            <li id="piano2" >
+            <%= link_to "Admin", admin_user_session_path , class:"btn btn-primary btn-lg "%> 
+            </li>
+        </div>
+
+<%end%>  
+    </div>
+
+</div>
+
+
+

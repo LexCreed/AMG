@@ -1,0 +1,120 @@
+<div class="row  jumbotron">
+  <div class="main-container col-xs-12">
+    <div class="box">
+      <div classs="" >
+        <h1 class="text-center col-xs-12">Registrarte</h1>
+      </div> 
+      <div cloass="container form-group ">
+        <div class="text-center form-group">
+          <div class="main-container">
+            <br><br><br>   <br><br><br> 
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
+
+  <br><br><br> 
+    
+            <div class="box container ">
+              <div class="field form-group col-md-12  text-inline">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+              <div class="field form-group col-md-12  text-inline">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+              <div class="field form-group col-md-12  text-inline ">
+                <%= f.label :password_confirmation, "Confirma password" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              </div>
+            </div>
+
+<br><br><br> 
+
+            <div class="box container ">
+              <div class="  form-group col-md-12  text-inline">
+                <%= f.label :name,"Nombre" %><br />
+                <%= f.text_field :name, autofocus: true, class:" " %>
+              </div> 
+              <div class="field form-group  col-md-6  text-inline">
+                <%= f.label :last_name, "Apellido Paterno" %><br />
+                <%= f.text_field :last_name, autofocus: true , class:" "%>
+              </div>
+              <div class="field form-group  col-md-6  text-inline">
+                <%= f.label :mother_last_name, "Apellido Materno" %><br />
+                <%= f.text_field :mother_last_name, autofocus: true , class:" "%>
+              </div>
+              <div class="field form-group  col-md-6  text-inline">
+                <%= f.label :year,"Edad" %><br />
+                <%= f.text_field :year, autofocus: true , class:" "%>
+              </div>
+              <div class="field form-group col-md-6   text-inline">
+                <%= f.label :cel,"Celular" %><br />
+                <%= f.number_field :cel, autofocus: true , class:" "%>
+              </div> 
+            </div>
+              
+<br><br><br>  
+
+            <div class="box container">
+              <div class="field form-group col-md-6  text-inline">
+                <%= f.label :Street, "Calle" %><br />
+                <%= f.text_field :Street, autofocus: true , class:" "%>
+              </div>
+              <div class="field form-group col-sm-6  text-inline">
+                <%= f.label :number,"Numero" %><br />
+                <%= f.number_field :number, autofocus: true , class:" "%>
+              </div>
+              <div class="field form-group col-sm-6  text-inline">
+                <%= f.label :colony,"Colonia" %><br />
+                <%= f.text_field :colony, autofocus: true , class:" "%>
+              </div>
+              <div class="field form-group col-sm-6  text-inline">
+                <%= f.label :delegation,"Delegacion" %><br />
+                <%= f.text_field :delegation, autofocus: true , class:" "%>
+              </div>
+            </div>
+
+
+<br><br><br>
+
+            <div class="box container">
+              <div class="field form-group col-sm-12  text-inline">
+                <%= f.label :tutor,"Nombre del Tutor" %><br />
+                <%= f.text_field :tutor, autofocus: true , class:"  "%>
+              </div>
+              <div class="field form-group col-sm-6  text-inline">
+                <%= f.label :cel_tutor,"Telefono" %><br />
+                <%= f.number_field :cel_tutor, autofocus: true, class:" " %>
+              </div>
+              <div class="field form-group col-sm-6  text-inline">
+                <%= f.label :emergency_phone,"Telefono de emergencia" %><br />
+                <%= f.text_field :emergency_phone, autofocus: true , class:"  "%>
+              </div>  
+            </div>
+
+<br><br><br>
+
+            <div class="box container">
+              <div class="field">
+                <%= f.label :instrument, "Instrumento" %><br />
+                <%= f.text_field :instrument, autofocus: true %>
+              </div> 
+            </div> 
+
+<br><br><br>
+
+              <div class="actions">
+                <%= f.submit "Crear Cuenta" %>
+              </div>
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
