@@ -12,6 +12,12 @@ ActiveAdmin.register Student do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+
+
+
+
+
+
 	index do
 	 selectable_column
 	 column :email
@@ -25,4 +31,17 @@ ActiveAdmin.register Student do
   	 actions 
   	end
 
+
+
+    filter :email
+    filter :name
+    filter :last_name
+    filter :mother_last_name
+    filter :instrument
+
+  collection_action :import_csv, method: :post do
+    # Do some CSV importing work here...
+    redirect_to collection_path, notice: "CSV imported successfully!"
+  end
+  
 end
